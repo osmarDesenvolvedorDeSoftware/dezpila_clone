@@ -1,25 +1,27 @@
-import { Button } from "@/components/ui/button";
-import { Loader2 } from "lucide-react";
-import { Streamdown } from 'streamdown';
+// Home Page - Dezpila TV Clone
+// Design: Entertainment Maximalism with Bold Red & Black
+// Features: Complete landing page with all sections
 
-/**
- * All content in this page are only for example, replace with your own feature implementation
- * When building pages, remember your instructions in Frontend Best Practices, Design Guide and Common Pitfalls
- */
+import Header from "@/components/Header";
+import HeroSection from "@/components/HeroSection";
+import CatalogSection from "@/components/CatalogSection";
+import LiveChannelsSection from "@/components/LiveChannelsSection";
+import BenefitsSection from "@/components/BenefitsSection";
+import PlansSection from "@/components/PlansSection";
+import Footer from "@/components/Footer";
+
 export default function Home() {
-  // If theme is switchable in App.tsx, we can implement theme toggling like this:
-  // const { theme, toggleTheme } = useTheme();
-
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen bg-black text-white">
+      <Header />
       <main>
-        {/* Example: lucide-react for icons */}
-        <Loader2 className="animate-spin" />
-        Example Page
-        {/* Example: Streamdown for markdown rendering */}
-        <Streamdown>Any **markdown** content</Streamdown>
-        <Button variant="default">Example Button</Button>
+        <HeroSection />
+        <CatalogSection />
+        <LiveChannelsSection />
+        <BenefitsSection />
+        <PlansSection />
       </main>
+      <Footer />
     </div>
   );
 }
