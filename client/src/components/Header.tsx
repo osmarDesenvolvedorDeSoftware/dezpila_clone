@@ -1,4 +1,4 @@
-// Header Component - Dezpila TV Clone
+// Header Component - 10Pila TV Clone
 // Design: Bold Entertainment Maximalism
 // Features: Navigation, Logo, CTA button with red accent
 
@@ -21,8 +21,8 @@ export default function Header() {
           {/* Logo */}
           <div className="flex items-center gap-2">
             <h1 className="text-3xl font-black tracking-tighter">
-              <span className="text-white">DEZ</span>
-              <span className="text-red-600">PILA</span>
+              <span className="text-white">10PILA</span>
+              <span className="text-red-600 ml-1">TV</span>
             </h1>
           </div>
 
@@ -42,8 +42,8 @@ export default function Header() {
           {/* CTA Button */}
           <div className="hidden md:flex">
             <a
-              href="#planos"
-              className="btn-cta text-sm"
+              href="https://wa.me/5516997555381?text=Olá,%20acabei%20de%20acessar%20o%20site%20da%2010Pila%20TV%20e%20quero%20conhecer%20os%20planos!"
+              className="btn-cta text-sm decoration-0"
             >
               ASSINAR AGORA
             </a>
@@ -72,8 +72,8 @@ export default function Header() {
               </a>
             ))}
             <a
-              href="#planos"
-              className="btn-cta text-sm block mt-4 text-center"
+              href="https://wa.me/5516997555381?text=Olá,%20acabei%20de%20acessar%20o%20site%20da%2010Pila%20TV%20e%20quero%20conhecer%20os%20planos!"
+              className="btn-cta text-sm block mt-4 text-center decoration-0"
               onClick={() => setMobileMenuOpen(false)}
             >
               ASSINAR AGORA

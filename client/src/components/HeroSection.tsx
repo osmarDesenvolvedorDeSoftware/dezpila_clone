@@ -1,46 +1,49 @@
-// Hero Section Component - Dezpila TV Clone
+// Hero Section Component - 10Pila TV Clone
 // Design: Bold red background with devices mockup
 // Features: Main headline, subheadline, CTA button
 
 import heroBackgroundUrl from "@/assets/hero-background.png";
-import devicesImageUrl from "@/assets/devices-mockup.png";
+import heroDevicesUrl from "@/assets/hero-devices.png";
 
 export default function HeroSection() {
 
   return (
     <section
-      className="relative w-full h-screen bg-cover bg-center pt-20 flex items-center justify-center overflow-hidden"
+      className="relative w-full min-h-screen bg-cover bg-center pt-20 flex items-center justify-center overflow-hidden"
       style={{
         backgroundImage: `url('${heroBackgroundUrl}')`,
         backgroundAttachment: "fixed",
       }}
     >
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/40"></div>
+      {/* Overlay - Darker for better text contrast */}
+      <div className="absolute inset-0 bg-black/60"></div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between gap-8">
-        {/* Left Content */}
-        <div className="flex-1 text-center lg:text-left animate-fade-in-up">
-          <h1 className="text-white mb-4">
-            Você só precisa de <span className="text-red-600">DEZ</span>
-            <span className="text-red-600">PILA</span>
+      <div className="relative z-10 container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between gap-12 pt-12">
+        {/* Left Content Wrapper - Restored */}
+        <div className="flex-1 text-center lg:text-left animate-fade-in-up flex flex-col items-center lg:items-start">
+          <h1 className="text-white mb-6 leading-[1.1] text-4xl md:text-6xl lg:text-7xl font-black uppercase italic tracking-tighter">
+            Toda a TV a Cabo liberada por <span className="text-red-600 block">4 HORAS GRÁTIS</span>
           </h1>
-          <p className="text-xl md:text-2xl text-white mb-8 font-light">
-            Filmes, séries e canais ao vivo, tudo em um só lugar.
+          <p className="text-lg md:text-xl text-zinc-300 mb-10 font-medium max-w-xl">
+            Experimente a melhor IPTV do Brasil sem compromisso. Filmes, séries e todos os canais de esporte em HD.
           </p>
-          <a href="#planos" className="btn-cta inline-block">
-            Assinar Agora
+          <a href="https://wa.me/5516997555381?text=Olá,%20acabei%20de%20ver%20o%20site%20da%2010Pila%20TV%20e%20quero%20um%20teste%20grátis!" className="bg-red-600 hover:bg-red-700 text-white text-lg md:text-xl font-black px-12 py-5 rounded-full uppercase tracking-tighter shadow-[0_10px_40px_rgba(220,38,38,0.4)] transition-all hover:scale-105 active:scale-95 flex items-center gap-3 decoration-0">
+            <span className="text-2xl animate-bounce-slow">🚀</span>
+            QUERO MEU TESTE GRÁTIS
           </a>
         </div>
 
-        {/* Right Image */}
-        <div className="flex-1 hidden lg:flex justify-center animate-slide-in-right">
-          <img
-            src={devicesImageUrl}
-            alt="Dezpila em múltiplos dispositivos"
-            className="max-w-md object-contain drop-shadow-2xl"
-          />
+        {/* Right Image - New High Quality Mockup */}
+        <div className="flex-1 hidden lg:flex justify-end animate-slide-in-right">
+          <div className="relative">
+            <div className="absolute -inset-4 bg-red-600/20 blur-3xl rounded-full"></div>
+            <img
+              src={heroDevicesUrl}
+              alt="10Pila TV em múltiplos dispositivos"
+              className="relative max-w-2xl w-full object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.8)]"
+            />
+          </div>
         </div>
       </div>
 

@@ -1,4 +1,4 @@
-// Content data for Dezpila Clone
+// Content data for 10Pila TV Clone
 // Design Philosophy: Entertainment Maximalism - Bold colors, clear hierarchy, dynamic elements
 
 export interface Movie {
@@ -22,6 +22,7 @@ export interface Plan {
   price: number;
   screens: number;
   features: string[];
+  whatsappMessage?: string;
 }
 
 export interface Benefit {
@@ -78,52 +79,40 @@ export const featuredContent: Movie[] = [
 ];
 
 // Live channels
+// Live channels
+// Based on January 2026 Audience Ratings
+// Logos are served locally from public/logos/
 export const channels: Channel[] = [
-  {
-    id: "1",
-    name: "HBO",
-    logo: "https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=200&h=100&fit=crop",
-  },
-  {
-    id: "2",
-    name: "NBA",
-    logo: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=200&h=100&fit=crop",
-  },
-  {
-    id: "3",
-    name: "Animal Planet",
-    logo: "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=200&h=100&fit=crop",
-  },
-  {
-    id: "4",
-    name: "ESPN",
-    logo: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=200&h=100&fit=crop",
-  },
-  {
-    id: "5",
-    name: "History",
-    logo: "https://images.unsplash.com/photo-1516979187457-637abb4f9353?w=200&h=100&fit=crop",
-  },
-  {
-    id: "6",
-    name: "Premier League",
-    logo: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=200&h=100&fit=crop",
-  },
-  {
-    id: "7",
-    name: "Fox Sports",
-    logo: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=200&h=100&fit=crop",
-  },
-  {
-    id: "8",
-    name: "Pix Megapix",
-    logo: "https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=200&h=100&fit=crop",
-  },
-  {
-    id: "9",
-    name: "TNT",
-    logo: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=200&h=100&fit=crop",
-  },
+  { id: "1", name: "Globo", logo: "/logos/globo.png" },
+  { id: "2", name: "Record", logo: "/logos/record.png" },
+  { id: "3", name: "SBT", logo: "/logos/sbt.png" },
+  { id: "4", name: "Band", logo: "/logos/band.png" },
+  { id: "5", name: "RedeTV!", logo: "/logos/redetv.png" },
+  { id: "6", name: "Cultura", logo: "/logos/cultura.svg" },
+  { id: "7", name: "Viva", logo: "/logos/viva.jpg" },
+  { id: "8", name: "Record News", logo: "/logos/record_news.png" },
+  { id: "9", name: "SporTV", logo: "/logos/sportv.png" },
+  { id: "10", name: "GloboNews", logo: "/logos/globonews.png" },
+  { id: "11", name: "Multishow", logo: "/logos/multishow.png" },
+  { id: "12", name: "ESPN", logo: "/logos/espn.webp" },
+  { id: "13", name: "Universal TV", logo: "/logos/universal.png" },
+  { id: "14", name: "AXN", logo: "/logos/axn.png" },
+  { id: "15", name: "Discovery Channel", logo: "/logos/discovery.png" },
+  { id: "16", name: "Cartoon Network", logo: "/logos/cartoon_network.png" },
+  { id: "17", name: "Warner TV", logo: "/logos/warner.png" },
+  { id: "18", name: "Megapix", logo: "/logos/megapix.png" },
+  { id: "19", name: "SporTV 2", logo: "/logos/sportv2.png" },
+  { id: "20", name: "TNT", logo: "/logos/tnt.png" },
+  { id: "21", name: "Space", logo: "/logos/Space.webp" },
+  { id: "22", name: "Star Channel", logo: "/logos/star.svg" },
+  { id: "23", name: "Premiere", logo: "/logos/premiere.png" },
+  { id: "24", name: "HBO", logo: "/logos/hbo.png" },
+  { id: "25", name: "Telecine Premium", logo: "/logos/telecine.png" },
+  { id: "26", name: "CNN Brasil", logo: "/logos/cnn.png" },
+  { id: "27", name: "Paramount Network", logo: "/logos/paramount.svg" },
+  { id: "28", name: "Disney Channel", logo: "/logos/disney.png" },
+  { id: "29", name: "MTV", logo: "/logos/mtv.png" },
+  { id: "30", name: "Comedy Central", logo: "/logos/comedy.svg" },
 ];
 
 // Subscription plans
@@ -134,6 +123,7 @@ export const plans: Plan[] = [
     duration: "1 mês",
     price: 10.0,
     screens: 1,
+    whatsappMessage: "Olá,%20quero%20assinar%20o%20plano%20Mensal%201%20Tela%20da%2010Pila%20TV!",
     features: [
       "Assista em até 1 Tela",
       "Qualidade Full HD e 4K",
@@ -148,6 +138,7 @@ export const plans: Plan[] = [
     duration: "1 mês",
     price: 19.0,
     screens: 2,
+    whatsappMessage: "Olá,%20quero%20assinar%20o%20plano%20Mensal%202%20Telas%20da%2010Pila%20TV!",
     features: [
       "Assista em até 2 Telas",
       "Qualidade Full HD e 4K",
@@ -162,6 +153,7 @@ export const plans: Plan[] = [
     duration: "3 meses",
     price: 50.0,
     screens: 2,
+    whatsappMessage: "Olá,%20quero%20assinar%20o%20plano%20Trimestral%202%20Telas%20da%2010Pila%20TV!",
     features: [
       "Assista em até 2 Telas",
       "Qualidade Full HD e 4K",
@@ -176,6 +168,7 @@ export const plans: Plan[] = [
     duration: "3 meses",
     price: 90.0,
     screens: 4,
+    whatsappMessage: "Olá,%20quero%20assinar%20o%20plano%20Trimestral%204%20Telas%20da%2010Pila%20TV!",
     features: [
       "Assista em até 4 Telas",
       "Qualidade Full HD e 4K",
@@ -202,7 +195,7 @@ export const benefits: Benefit[] = [
   },
   {
     id: "3",
-    title: "Só DezPila",
+    title: "Só 10Pila",
     description: "Pague por muito conteúdo, sem perder sua carteira.",
     icon: "💰",
   },

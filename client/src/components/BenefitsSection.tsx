@@ -1,4 +1,4 @@
-// Benefits Section Component - Dezpila TV Clone
+// Benefits Section Component - 10Pila TV Clone
 // Design: Red cards with icons and descriptions
 // Features: 3 benefit cards, hover effects
 
@@ -21,7 +21,7 @@ export default function BenefitsSection() {
 
         {/* Title */}
         <h2 className="text-white text-4xl md:text-5xl font-black text-center mb-4">
-          Veja o que você terá com o <span className="text-red-600">DezPila</span>
+          Veja o que você terá com o <span className="text-red-600">10Pila TV</span>
         </h2>
 
         {/* Benefits Grid */}
@@ -49,7 +49,12 @@ export default function BenefitsSection() {
 
         {/* CTA Button */}
         <div className="flex justify-center">
-          <a href="#planos" className="btn-cta">
+          <a
+            href="https://wa.me/5516997555381?text=Olá,%20estou%20vendo%20os%20benefícios%20no%20site%20e%20quero%20assinar%20a%2010Pila%20TV!"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-cta decoration-0 text-center"
+          >
             Assinar Agora
           </a>
         </div>

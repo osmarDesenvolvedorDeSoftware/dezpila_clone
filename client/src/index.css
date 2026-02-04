@@ -43,10 +43,13 @@
 }
 
 :root {
-  /* Dezpila Entertainment Maximalism Color Scheme */
-  --primary: #FF0000; /* Vibrant Red - Action, Energy */
-  --primary-foreground: #FFFFFF; /* White text on red */
-  --sidebar-primary: #E60000; /* Darker red for sidebar */
+  /* 10Pila TV Entertainment Maximalism Color Scheme */
+  --primary: #FF0000;
+  /* Vibrant Red - Action, Energy */
+  --primary-foreground: #FFFFFF;
+  /* White text on red */
+  --sidebar-primary: #E60000;
+  /* Darker red for sidebar */
   --sidebar-primary-foreground: #FFFFFF;
   --chart-1: #FF0000;
   --chart-2: #E60000;
@@ -54,23 +57,37 @@
   --chart-4: #990000;
   --chart-5: #660000;
   --radius: 0.5rem;
-  --background: #0a0a0a; /* Deep black */
-  --foreground: #FFFFFF; /* White text */
-  --card: #F5F5F5; /* Light gray for cards */
-  --card-foreground: #1a1a1a; /* Dark text on light cards */
-  --popover: #1a1a1a; /* Dark popover */
-  --popover-foreground: #FFFFFF; /* White text on dark */
-  --secondary: #1a1a1a; /* Dark secondary */
+  --background: #0a0a0a;
+  /* Deep black */
+  --foreground: #FFFFFF;
+  /* White text */
+  --card: #F5F5F5;
+  /* Light gray for cards */
+  --card-foreground: #1a1a1a;
+  /* Dark text on light cards */
+  --popover: #1a1a1a;
+  /* Dark popover */
+  --popover-foreground: #FFFFFF;
+  /* White text on dark */
+  --secondary: #1a1a1a;
+  /* Dark secondary */
   --secondary-foreground: #FFFFFF;
-  --muted: #333333; /* Medium gray */
-  --muted-foreground: #CCCCCC; /* Light gray text */
-  --accent: #FF0000; /* Red accent */
+  --muted: #333333;
+  /* Medium gray */
+  --muted-foreground: #CCCCCC;
+  /* Light gray text */
+  --accent: #FF0000;
+  /* Red accent */
   --accent-foreground: #FFFFFF;
-  --destructive: #FF0000; /* Red for destructive */
+  --destructive: #FF0000;
+  /* Red for destructive */
   --destructive-foreground: #FFFFFF;
-  --border: #333333; /* Dark border */
-  --input: #1a1a1a; /* Dark input background */
-  --ring: #FF0000; /* Red focus ring */
+  --border: #333333;
+  /* Dark border */
+  --input: #1a1a1a;
+  /* Dark input background */
+  --ring: #FF0000;
+  /* Red focus ring */
   --sidebar: #0a0a0a;
   --sidebar-foreground: #FFFFFF;
   --sidebar-accent: #FF0000;
@@ -80,7 +97,7 @@
 }
 
 .dark {
-  /* Dark theme is the default for Dezpila - same as root */
+  /* Dark theme is the default for 10Pila TV - same as root */
   --primary: #FF0000;
   --primary-foreground: #FFFFFF;
   --sidebar-primary: #E60000;
@@ -119,9 +136,11 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
   [type="button"]:not(:disabled),
@@ -136,6 +155,7 @@
 }
 
 @layer components {
+
   /**
    * Custom container utility that centers content and adds responsive padding.
    *
@@ -153,7 +173,8 @@
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1rem; /* 16px - mobile padding */
+    padding-left: 1rem;
+    /* 16px - mobile padding */
     padding-right: 1rem;
   }
 
@@ -164,21 +185,30 @@
 
   @media (min-width: 640px) {
     .container {
-      padding-left: 1.5rem; /* 24px - tablet padding */
+      padding-left: 1.5rem;
+      /* 24px - tablet padding */
       padding-right: 1.5rem;
     }
   }
 
   @media (min-width: 1024px) {
     .container {
-      padding-left: 2rem; /* 32px - desktop padding */
+      padding-left: 2rem;
+      /* 32px - desktop padding */
       padding-right: 2rem;
-      max-width: 1280px; /* Standard content width */
+      max-width: 1280px;
+      /* Standard content width */
     }
   }
 }
-/* Dezpila Typography System */
-h1, h2, h3, h4, h5, h6 {
+
+/* 10Pila TV Typography System */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'Poppins', sans-serif;
   font-weight: bold;
 }
@@ -211,7 +241,7 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
-/* Dezpila Button Styles */
+/* 10Pila TV Button Styles */
 .btn-cta {
   background-color: #FF0000;
   color: #FFFFFF;
@@ -230,7 +260,7 @@ body {
   transform: translateY(-2px);
 }
 
-/* Dezpila Card Styles */
+/* 10Pila TV Card Styles */
 .card-benefit {
   background-color: #FF0000;
   color: #FFFFFF;
@@ -285,6 +315,7 @@ body {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -300,6 +331,7 @@ body {
     opacity: 0;
     transform: translateX(30px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -311,14 +343,31 @@ body {
 }
 
 @keyframes pulse-glow {
-  0%, 100% {
+
+  0%,
+  100% {
     box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
   }
+
   50% {
     box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
   }
 }
 
-.animate-pulse-glow {
-  animation: pulse-glow 2s ease-in-out infinite;
+@keyframes bounce-slow {
+
+  0%,
+  100% {
+    transform: translateY(-5%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+
+  50% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 3s infinite;
 }

@@ -1,0 +1,220 @@
+
+==================================================
+1. Searching for Region IDs (Brazil, S.America, World)
+==================================================
+Found Regions: {
+  "brazil": "brazil:39",
+  "south-america": "south-america:3",
+  "world": "world:8"
+}
+
+==================================================
+2. Analyzing Leagues in brazil (brazil:39)
+==================================================
+Total leagues found: 151
+  [BRAZIL MATCH] Copa Betano do Brasil (ID: zFsJPnr6)
+  [BRAZIL MATCH] Copa do Brasil U20 (ID: IVerjrRP)
+  [BRAZIL MATCH] Copa do Brasil U17 (ID: zP3AAzCM)
+  [BRAZIL MATCH] Copa Alagoas (ID: xl8K5rP0)
+  [BRAZIL MATCH] Copa Espirito Santo (ID: tOo4Xjf8)
+  [BRAZIL MATCH] Copa Fares Lopes (ID: nwp9f5Zr)
+  [BRAZIL MATCH] Copa FGF (ID: 460Abbes)
+  [BRAZIL MATCH] Copa FMF (Mato Grosso) (ID: fP0vDqLu)
+  [BRAZIL MATCH] Copa Grao Para (ID: U7Wy0Kke)
+  [BRAZIL MATCH] Copa Paulista (ID: 6LFqoW2l)
+  [BRAZIL MATCH] Copa Rio (ID: xMPnQS9k)
+  [BRAZIL MATCH] Copa Rio U20 (ID: baQs5Is5)
+  [BRAZIL MATCH] Copa Santa Catarina (ID: AsOrFCsH)
+  [BRAZIL MATCH] Copa Verde (ID: MX0a0C84)
+  [BRAZIL MATCH] Copa do Nordeste (ID: Ao7GPS6O)
+  [BRAZIL MATCH] Copa do Brasil Women (ID: z7AqHW5F)
+  [BRAZIL MATCH] Copa Paulista Women (ID: vDIPEJQc)
+  [BRAZIL MATCH] Copa Rio Women (ID: MNShyaa1)
+
+==================================================
+2. Analyzing Leagues in south-america (south-america:3)
+==================================================
+Total leagues found: 18
+
+==================================================
+2. Analyzing Leagues in world (world:8)
+==================================================
+Total leagues found: 62
+  [WORLD MATCH] Friendly International (ID: f1GbGBCd)
+  [WORLD MATCH] Club Friendly (ID: Ox0MZaDH)
+  [WORLD MATCH] Friendly International Women (ID: QTSAtekc)
+  [WORLD MATCH] Club Friendly Women (ID: IJ8QY4In)
+
+==================================================
+3. Checking Games & TV Channels
+==================================================
+No target leagues found automatically. Trying manual fallback for Brazil Serie A...
+
+Checking -> Serie A Betano (serie-a-betano:Yq4hUnzQ)...
+  > Found 4 games.
+  GAME: Bragantino vs Atletico-MG
+    Time (UTC): 2026-02-04T22:00:00.000Z
+    TV Channels:
+      - 1xBet
+      - 1xBet.kz
+      - 22Bet
+      - Arena Premium 2 (Kos)
+      - Arena Premium 2 (Srb)
+      - Arena Sport 1 (BiH)
+      - Azteca 7 (Mex)
+      - Azteca Deportes (Mex)
+      - Betano.bg
+      - Betano.ca (Ontario)
+      - Betano.ec
+      - Betano.pe
+      - Betano.ro
+      - Betclic.ci
+      - Betclic.fr
+      - Betclic.pl
+      - Caliente
+      - Chance
+      - Claro TV+ (Bra)
+      - El Canal del Futbol (Ecu)
+      - El Canal del Futbol app (Ecu)
+      - Fanatiz (Mex)
+      - Fanatiz (Usa)
+      - Globoplay (Bra)
+      - MATCH! Futbol 3 (Rus)
+      - Match TV (Rus)
+      - Premiere (Bra)
+      - Sky+ (Bra)
+      - Spor Smart 1 (Tur)
+      - Sportbox.ru (Rus)
+      - Sportdigital FUSSBALL 2 (Ger)
+      - Stoiximan.cy
+      - Stoiximan.gr
+      - Tipsport
+      - Tipsport SK
+      - Unibet
+      - Unibet AU
+      - Unibet BE
+      - Unibet DK
+      - Unibet SE
+      - Unibet UK
+      - Vivo Play (Bra)
+      - Winlinebet
+      - Zapping (Bra)
+      - bet365*
+      - bet365.it*
+      - bet365.nj
+      - bet365.nl
+  GAME: Flamengo RJ vs Internacional
+    Time (UTC): 2026-02-04T22:00:00.000Z
+    TV Channels:
+      - 1xBet
+      - 1xBet.kz
+      - 22Bet
+      - Chance
+      - Claro TV+ (Bra)
+      - Fanatiz (Mex)
+      - Fanatiz (Usa)
+      - Globoplay (Bra)
+      - Premiere (Bra)
+      - Sky+ (Bra)
+      - SporTV (Bra)
+      - Tipsport
+      - Tipsport SK
+      - Vivo Play (Bra)
+      - Zapping (Bra)
+  GAME: Remo vs Mirassol
+    Time (UTC): 2026-02-04T23:00:00.000Z
+    TV Channels:
+      - 1xBet
+      - 1xBet.kz
+      - 22Bet
+      - Betano.bg
+      - Betano.ca (Ontario)
+      - Betano.ec
+      - Betano.pe
+      - Betano.ro
+      - Betclic.ci
+      - Betclic.fr
+      - Betclic.pl
+      - Caliente
+      - Chance
+      - Claro TV+ (Bra)
+      - Fanatiz (Mex)
+      - Fanatiz (Usa)
+      - Globoplay (Bra)
+      - Premiere (Bra)
+      - Sky+ (Bra)
+      - Stoiximan.cy
+      - Stoiximan.gr
+      - Superbet.pl
+      - Superbet.ro
+      - Tipsport
+      - Tipsport SK
+      - Unibet
+      - Unibet AU
+      - Unibet BE
+      - Unibet DK
+      - Unibet SE
+      - Unibet UK
+      - Vivo Play (Bra)
+      - Winlinebet
+      - Zapping (Bra)
+      - bet365*
+      - bet365.it*
+      - bet365.nj
+      - bet365.nl
+  GAME: Santos vs Sao Paulo
+    Time (UTC): 2026-02-04T23:00:00.000Z
+    TV Channels:
+      - 1xBet
+      - 1xBet.kz
+      - 22Bet
+      - Betano.bg
+      - Betano.ca (Ontario)
+      - Betano.ec
+      - Betano.pe
+      - Betano.ro
+      - Betclic.ci
+      - Betclic.fr
+      - Betclic.pl
+      - Caliente
+      - Canal 11 (Por)
+      - Chance
+      - Claro TV+ (Bra)
+      - DAZN (Aut)
+      - DAZN Deutsch
+      - DAZN Switzerland
+      - El Canal del Futbol (Ecu)
+      - El Canal del Futbol app (Ecu)
+      - Fanatiz (Mex)
+      - Fanatiz (Usa)
+      - Globoplay (Bra)
+      - Movistar Plus+ (Esp)
+      - Movistar+ Vamos Bar 1 (Esp)
+      - Premier Sports 1 (Gbr)
+      - Premier Sports 2 (Gbr)
+      - Premier Sports Player (Gbr)
+      - Premiere (Bra)
+      - Sky+ (Bra)
+      - Spor Smart 2 (Tur)
+      - Sport 4 (Isr)
+      - Sportdigital FUSSBALL (Ger)
+      - Stoiximan.cy
+      - Stoiximan.gr
+      - Sunrise TV (Sui)
+      - Superbet.pl
+      - Superbet.ro
+      - Tipsport
+      - Tipsport SK
+      - Unibet
+      - Unibet AU
+      - Unibet BE
+      - Unibet DK
+      - Unibet SE
+      - Unibet UK
+      - Vivo Play (Bra)
+      - Winlinebet
+      - Zapping (Bra)
+      - bet365*
+      - bet365.it*
+      - bet365.nj
+      - bet365.nl

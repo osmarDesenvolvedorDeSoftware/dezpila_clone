@@ -1,4 +1,4 @@
-// Footer Component - Dezpila TV Clone
+// Footer Component - 10Pila TV Clone
 // Design: Contact info, social links, tagline
 // Features: WhatsApp contact, social media links
 
@@ -14,7 +14,7 @@ export default function Footer() {
             Estamos sempre aqui para ajudar, entre em contato com nossa equipe de suporte:
           </p>
           <a
-            href="https://wa.me/5511999999999"
+            href="https://wa.me/5516997555381?text=Olá,%20acabei%20de%20ver%20o%20site%20da%2010Pila%20TV%20e%20gostaria%20de%20mais%20informações!"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 btn-cta"
@@ -49,7 +49,7 @@ export default function Footer() {
 
         {/* Tagline */}
         <p className="text-center text-gray-400 text-sm">
-          DezPila, o melhor streaming desde 2023, possui alto nível de satisfação dos clientes.
+          10Pila TV, o melhor streaming desde 2023, possui alto nível de satisfação dos clientes.
         </p>
       </div>
     </footer>

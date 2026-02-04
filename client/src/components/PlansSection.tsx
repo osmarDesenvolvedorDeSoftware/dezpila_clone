@@ -1,4 +1,4 @@
-// Plans Section Component - Dezpila TV Clone
+// Plans Section Component - 10Pila TV Clone
 // Design: 4 pricing cards in 2x2 grid
 // Features: Plan comparison, features list, CTA buttons
 
@@ -24,7 +24,7 @@ export default function PlansSection() {
               {/* Plan Name */}
               <div className="mb-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">
-                  DezPila <span className="text-red-600">{plan.name}</span>
+                  10Pila TV <span className="text-red-600">{plan.name}</span>
                 </h3>
                 <p className="text-sm text-gray-600 font-semibold">
                   Acesso por {plan.duration}
@@ -40,8 +40,10 @@ export default function PlansSection() {
 
               {/* CTA Button */}
               <a
-                href="#"
-                className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-4 rounded transition-all duration-300 mb-6 text-center"
+                href={`https://wa.me/5516997555381?text=${(plan as any).whatsappMessage || "Olá,%20quero%20assinar%20o%20plano%20da%2010Pila%20TV!"}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-4 rounded transition-all duration-300 mb-6 text-center decoration-0"
               >
                 ASSINAR AGORA
               </a>

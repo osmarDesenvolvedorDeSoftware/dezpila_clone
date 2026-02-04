@@ -5,16 +5,17 @@ import fs from "node:fs";
 import path from "node:path";
 import { defineConfig, type Plugin, type ViteDevServer } from "vite";
 import { vitePluginManusRuntime } from "vite-plugin-manus-runtime";
+import axios from "axios";
+import "dotenv/config";
 
 // =============================================================================
 // Manus Debug Collector - Vite Plugin
-// Writes browser logs directly to files, trimmed when exceeding size limit
 // =============================================================================
 
 const PROJECT_ROOT = import.meta.dirname;
 const LOG_DIR = path.join(PROJECT_ROOT, ".manus-logs");
 const MAX_LOG_SIZE_BYTES = 1 * 1024 * 1024; // 1MB per log file
-const TRIM_TARGET_BYTES = Math.floor(MAX_LOG_SIZE_BYTES * 0.6); // Trim to 60% to avoid constant re-trimming
+const TRIM_TARGET_BYTES = Math.floor(MAX_LOG_SIZE_BYTES * 0.6);
 
 type LogSource = "browserConsole" | "networkRequests" | "sessionReplay";
 
@@ -34,7 +35,6 @@ function trimLogFile(logPath: string, maxSize: number) {
     const keptLines: string[] = [];
     let keptBytes = 0;
 
-    // Keep newest lines (from end) that fit within 60% of maxSize
     const targetSize = TRIM_TARGET_BYTES;
     for (let i = lines.length - 1; i >= 0; i--) {
       const lineBytes = Buffer.byteLength(`${lines[i]}\n`, "utf-8");
@@ -55,25 +55,15 @@ function writeToLogFile(source: LogSource, entries: unknown[]) {
   ensureLogDir();
   const logPath = path.join(LOG_DIR, `${source}.log`);
 
-  // Format entries with timestamps
   const lines = entries.map((entry) => {
     const ts = new Date().toISOString();
     return `[${ts}] ${JSON.stringify(entry)}`;
   });
 
-  // Append to log file
   fs.appendFileSync(logPath, `${lines.join("\n")}\n`, "utf-8");
-
-  // Trim if exceeds max size
   trimLogFile(logPath, MAX_LOG_SIZE_BYTES);
 }
 
-/**
- * Vite plugin to collect browser debug logs
- * - POST /__manus__/logs: Browser sends logs, written directly to files
- * - Files: browserConsole.log, networkRequests.log, sessionReplay.log
- * - Auto-trimmed when exceeding 1MB (keeps newest entries)
- */
 function vitePluginManusDebugCollector(): Plugin {
   return {
     name: "manus-debug-collector",
@@ -98,14 +88,12 @@ function vitePluginManusDebugCollector(): Plugin {
     },
 
     configureServer(server: ViteDevServer) {
-      // POST /__manus__/logs: Browser sends logs (written directly to files)
       server.middlewares.use("/__manus__/logs", (req, res, next) => {
         if (req.method !== "POST") {
           return next();
         }
 
         const handlePayload = (payload: any) => {
-          // Write logs directly to files
           if (payload.consoleLogs?.length > 0) {
             writeToLogFile("browserConsole", payload.consoleLogs);
           }
@@ -150,7 +138,75 @@ function vitePluginManusDebugCollector(): Plugin {
   };
 }
 
-const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector()];
+/**
+ * Development Proxy for TMDB API
+ * Handles /api/tmdb/featured requests in local dev environment
+ */
+function tmdbDevProxy(): Plugin {
+  return {
+    name: "tmdb-dev-proxy",
+    configureServer(server: ViteDevServer) {
+      server.middlewares.use("/api/tmdb/featured", async (req, res, next) => {
+        try {
+          const apiKey = process.env.TMDB_API_KEY;
+          if (!apiKey) {
+            res.statusCode = 500;
+            res.end(JSON.stringify({ error: "TMDB_API_KEY not configured in .env" }));
+            return;
+          }
+
+          // Randomize page to make it dynamic (1 to 5)
+          const randomPage = Math.floor(Math.random() * 5) + 1;
+
+          // Discover 2026 movies (or current/upcoming)
+          const discoverUrl = "https://api.themoviedb.org/3/discover/movie";
+          const discoverRes = await axios.get(discoverUrl, {
+            params: {
+              api_key: apiKey,
+              language: "pt-BR",
+              sort_by: "popularity.desc",
+              primary_release_year: 2026,
+              page: randomPage,
+              include_adult: false,
+            },
+          });
+
+          const results = discoverRes.data.results;
+
+          // Map to simple format
+          const movies = results.map((m: any) => ({
+            id: m.id,
+            title: m.title || m.name,
+            poster_url: m.poster_path
+              ? `https://image.tmdb.org/t/p/w500${m.poster_path}`
+              : null,
+            rating: m.vote_average,
+          }));
+
+          // Shuffle
+          const shuffled = movies.sort(() => 0.5 - Math.random());
+          const finalData = shuffled.slice(0, 10);
+
+          res.setHeader("Content-Type", "application/json");
+          res.end(JSON.stringify(finalData));
+        } catch (error: any) {
+          console.error("TMDB Dev Proxy Error:", error.message);
+          res.statusCode = 500;
+          res.end(JSON.stringify({ error: "Failed to fetch featured movies" }));
+        }
+      });
+    },
+  };
+}
+
+const plugins = [
+  react(),
+  tailwindcss(),
+  jsxLocPlugin(),
+  vitePluginManusRuntime(),
+  vitePluginManusDebugCollector(),
+  tmdbDevProxy()
+];
 
 export default defineConfig({
   plugins,
@@ -180,6 +236,13 @@ export default defineConfig({
       "localhost",
       "127.0.0.1",
     ],
+    proxy: {
+      "/api": {
+        target: "http://localhost:3001",
+        changeOrigin: true,
+        secure: false,
+      },
+    },
     fs: {
       strict: true,
       deny: ["**/.*"],

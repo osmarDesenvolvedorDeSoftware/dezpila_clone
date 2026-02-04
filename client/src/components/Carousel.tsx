@@ -1,4 +1,4 @@
-// Carousel Component - Dezpila TV Clone
+// Carousel Component - 10Pila TV Clone
 // Design: Horizontal scroll with movie cards
 // Features: Navigation arrows, smooth scrolling, responsive
 
@@ -73,9 +73,14 @@ export default function Carousel({ items, title }: CarouselProps) {
                   />
                   {/* Overlay */}
                   <div className="absolute inset-0 bg-black/60 opacity-0 group-hover/card:opacity-100 transition-opacity flex items-center justify-center">
-                    <button className="btn-cta text-sm py-2 px-4">
-                      Assistir
-                    </button>
+                    <a
+                      href="https://wa.me/5516997555381?text=Olá,%20vi%20um%20conteúdo%20no%20catálogo%20da%2010Pila%20TV%20e%20quero%20assinar!"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-cta text-sm py-2 px-4 decoration-0"
+                    >
+                      Assine
+                    </a>
                   </div>
                 </div>
 

@@ -1,10 +1,19 @@
-// Live Channels Section Component - Dezpila TV Clone
+// Live Channels Section Component - 10Pila TV Clone
 // Design: Grid of channel logos
 // Features: 3x3 grid, responsive layout
 
-import { channels } from "@/lib/content";
+import { useEffect, useState } from "react";
+import { channels, Channel } from "@/lib/content";
 
 export default function LiveChannelsSection() {
+  const [displayedChannels, setDisplayedChannels] = useState<Channel[]>([]);
+
+  useEffect(() => {
+    // Shuffle channels array and take 9 random ones
+    const shuffled = [...channels].sort(() => 0.5 - Math.random());
+    setDisplayedChannels(shuffled.slice(0, 9));
+  }, []);
+
   return (
     <section className="bg-black py-16 md:py-24">
       <div className="container mx-auto px-4">
@@ -31,7 +40,7 @@ export default function LiveChannelsSection() {
 
         {/* Channels Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-12">
-          {channels.map((channel) => (
+          {displayedChannels.map((channel) => (
             <div
               key={channel.id}
               className="bg-white rounded-lg p-6 flex items-center justify-center hover:shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer group"
@@ -47,7 +56,12 @@ export default function LiveChannelsSection() {
 
         {/* CTA Button */}
         <div className="flex justify-center">
-          <a href="#planos" className="btn-cta">
+          <a
+            href="https://wa.me/5516997555381?text=Olá,%20quero%20ter%20acesso%20a%20todos%20esses%20canais%20ao%20vivo%20na%2010Pila%20TV!"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-cta decoration-0 text-center"
+          >
             Assinar Agora
           </a>
         </div>
