@@ -85,29 +85,6 @@ export default function TrialSection() {
                     </div>
 
                     <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 md:gap-6">
-                        {/* PREX21 - Featured */}
-                        <div className="bg-zinc-900 border-2 border-red-600 p-4 md:p-6 rounded-2xl flex flex-col items-center text-center shadow-[0_0_40px_rgba(220,38,38,0.2)] hover:scale-105 transition-all relative overflow-hidden group col-span-2 lg:col-span-1">
-                            <div className="absolute top-2 right-2 bg-red-600 text-white text-[7px] md:text-[8px] font-black px-2 py-0.5 rounded-full z-10 animate-pulse">RECOMENDADO</div>
-                            <div className="w-20 h-20 md:w-24 md:h-24 mb-4 rounded-2xl overflow-hidden bg-white p-2 shadow-xl group-hover:rotate-3 transition-transform">
-                                <img src="/logos/prex21.webp" alt="PREX21" className="w-full h-full object-contain" />
-                            </div>
-                            <h5 className="text-white font-black text-sm md:text-lg mb-1 uppercase italic tracking-tighter">PREX21 PLAYER</h5>
-                            <div className="bg-zinc-800/50 px-3 py-2 rounded-xl border border-white/5 mb-3 w-full">
-                                <p className="text-zinc-400 font-bold text-[8px] md:text-[9px] text-center uppercase mb-1">Status</p>
-                                <p className="text-green-500 font-black text-[10px] md:text-xs text-center uppercase flex items-center justify-center gap-1">
-                                    <Zap className="w-3 h-3 fill-current" /> Online
-                                </p>
-                            </div>
-                            <a
-                                href="https://play.google.com/store/apps/details?id=com.cb.prexc&hl=pt_BR"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="w-full bg-red-600 hover:bg-red-700 text-white text-[9px] md:text-[10px] font-black py-2 md:py-3 rounded-xl uppercase tracking-widest shadow-[0_4px_20px_rgba(220,38,38,0.5)] transition-all active:scale-95"
-                            >
-                                Baixar Agora
-                            </a>
-                        </div>
-
                         {[
                             { name: "PLAY SIM", logo: "/logos/playsim.png", feat: "Canais 4K", status: "Liberação Zap" },
                             { name: "CORE PLAYER", logo: "/logos/core player.png", feat: "Anti-Trava", status: "Painel Ativo" },
